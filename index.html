@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="database.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>O Dragão</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="icon" href="favicon-32x32.png" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+
+
+  <header>
+    <img src="esquerda.png" alt="" id="imgEsquerda" onclick="location.reload()">
+    <img src="Captura de tela 2023-03-20 121329.png" alt="" id="capa">
+
+    <ul class="sobre">
+      <li>  <i class='bx bx-devices' ></i> Em Breve</li>
+
+      <li for="loja"><a href="#lojaa">Loja</a></li>
+      <li for="sobree"><a href="#sobree">Sobre</a></li>
+
+      <!-- <label for="name">Clique em mim</label> agora se clicar em senha ele vai pro espaço -->
+      <!-- posso usar o <a href="name"></a> ai coloco o id onde eu quiser -->
+
+    </ul>
+
+  </header>
+
+  <main>
+
+
+    <div id="ImagemComeço">
+
+      <section class="areaDaLoja">
+
+        <!-- nada ver utilizar o input , posso usar simplesmente o <a href="#coloco o id"></a> -->
+        <!-- <input type="text" id="name" name="nomeDoUsuario" placeholder="Digite sua senha" required="True"> -->
+
+        <div id="loja" class="caixaRed">
+
+
+          <section class="main-cards">
+
+            <ul class="classeUl">
+
+
+
+            </ul>
+          </section>
+        </div>
+
+        <!-- <input type="number"> -->
+        <!-- ///////////////////////////////////////////////////////// -->
+        <section id="lojaa" class="main-details">
+        
+          <div class="categoria">
+            <ul>
+              <li><img id="luva" src="box-e.png"  /><p>Muay Thai</p></li>
+              <li><img id="all" src="https://img.icons8.com/ios-filled/50/null/menu-squared-2.png"   /><p>Todos</p></li>
+              <li><img id="Kimono" src="https://img.icons8.com/glyph-neue/64/null/kimono.png" /><p>Jiu-Jítsu</p></li>
+            </ul>
+          </div>
+
+          <div class="main-search">
+            <input class="search-input" type="text" placeholder="  Digite aqui sua pesquisa..." />
+            <button class="search-button">Pesquisar</button>
+          </div>
+          <aside>
+            <div class="cart-title">
+              <h4>Carrinho de compras</h4>
+            </div>
+            <div class="cart-empty" id="cart-verify">
+              <h5>Carrinho Vazio</h5>
+              <p>Adicione Itens</p>
+            </div>
+
+            <div class="cart-products">
+              <ul class="cart-list"></ul>
+            </div>
+            <div class="cart-details">
+              <div class="details-values">
+                <p>Quantidade:</p><span id="quantidadeId">0</span>
+              </div>
+              <div class="details-values">
+                <p>Total:</p>
+                <span id="moneyId">R$ 0,00</span>
+              </div>
+
+            </div>
+
+
+    </div>
+    </aside>
+    </section>
+
+
+    </section>
+    </div>
+
+
+    <section class="terceiro">
+      <div id="sobree" class="center">
+
+        <section id="bodyy">
+
+          <div class="container">
+            <div class="card">
+              <div class="imgBx">
+                <div class="subir">
+                  <h1>Sobre</h1>
+                  <img src="endereco.png">
+                </div>
+              </div>
+              <div class="content">
+                <h3 class="titulo">Endereço</h3>
+                <div class="mapa"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61422.00754256533!2d-47.85933937394404!3d-15.81051892573424!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1680657327528!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="imgBx">
+                <img src="wpp.png">
+              </div>
+              <div class="content">
+                <h3 class="titulo">Contato</h3>
+                <p>Faça parte da nossa comunidade ou entre em contato:</p>
+                <ul>
+                  <li><i class='bx bxl-linkedin-square'></i><a href="https://www.linkedin.com/in/arthur-claro-dev/"
+                      target="_blank">Linkedin</a></li>
+                  <li><i class='bx bxl-github'></i><a href="https://github.com/ArthurClaro" target="_blank">Github</a>
+                  </li>
+                  <li><i class='bx bxl-whatsapp'></i><a
+                      href="https://api.whatsapp.com/send/?phone=%2B5561993014861&text=Ol%C3%A1,%20vim%20pelo%20site%20O%20Drag%C3%A3o%20!"
+                      target="_blank">Whatsapp</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="imgBx">
+                <img src="loja.png">
+              </div>
+              <div class="content">
+                <h3 class="titulo">Loja</h3>
+                <p>Não perca nossas ofertas !</p>
+                <p>Aproveite enquanto ainda está disponivel : </p>
+                <a href="#lojaa" class="dd"><i class='bx bxl-shopify'></i></a>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+      </div>
+    </section>
+
+    <!-- <footer>
+Meu<a href="https://www.linkedin.com/in/arthur-claro-8113b41a6/">Linkedin</a>
+</footer> -->
+
+    <!-- <input type="number" value="1" //que ai começa do 1 placeholder="Qnt" > -->
+
+  </main>
+
+  <footer>
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <p>© 2023 Arthur Claro | Frontend Developer</p>
+  </footer>
+</body>
+
+</html>
