@@ -1,3 +1,12 @@
+var typed = new Typed(".multiple",{
+    strings:["Bem-vindo","Lute, Acredite, Conquiste, Perca, Deseje."],
+    typeSpeed:100,
+    backSpeed:100,
+    backDelay:1000,
+    loop:true
+})
+
+
 let quantidade = document.querySelector("#quantidadeId")
 let contagemItens = 0;
 
@@ -18,7 +27,7 @@ function renderProducts(list) {
         let h2Name = document.createElement("h2")
         let pDescripition = document.createElement("p")
         let h4Valor = document.createElement("h4")
-        let buttonAdd = document.createElement("button")
+        let buttonAddc = document.createElement("button")
         let p2Tag = document.createElement("p")
 
         li.id = `${list[i].id}`
@@ -31,9 +40,9 @@ function renderProducts(list) {
         pDescripition.innerHTML = list[i].description
         h4Valor.innerHTML = `R$${list[i].value}`
 
-        buttonAdd.innerHTML = `Adicionar ao Carrinho`
-        buttonAdd.classList.add(`ProductButton`)
-        buttonAdd.id = `${list[i].id}`
+        buttonAddc.innerHTML = `Adicionar ao Carrinho`
+        buttonAddc.classList.add(`ProductButton`)
+        buttonAddc.id = `${list[i].id}`
 
         p2Tag.innerHTML = list[i].tag
         p2Tag.classList = `tag`
@@ -47,9 +56,9 @@ function renderProducts(list) {
         li.appendChild(h2Name)
         li.appendChild(pDescripition)
         li.appendChild(h4Valor)
-        li.appendChild(buttonAdd)
+        li.appendChild(buttonAddc)
 
-        buttonAdd.addEventListener(`click`, function (e) {
+        buttonAddc.addEventListener(`click`, function (e) {
             let idElemnto = e.target.id
             // console.log(idElemnto)
             // "1"
@@ -77,14 +86,15 @@ function renderProducts(list) {
                 // let product = searchProducts(id)
 
                 let elementCart = removeCardList(product)
+                // console.log(elementCart)
 
                 document.querySelector(".cart-empty").style.display = "none"
                 document.querySelector('.cart-list').appendChild(elementCart)
 
-                document.querySelector(".cart-products").style.background= "url(areaDaloja.png)"
+                document.querySelector(".cart-products").style.background = "url(areaDaloja.png)"
                 // document.querySelector(".cart-products").style.background= "none"
 
-            }else{
+            } else {
                 alert("Item já Add.");
 
             }
@@ -112,6 +122,9 @@ function procuraItem(id) {
 
 function removeCardList(list) {
 
+
+
+
     let li = document.createElement("li")
     let div = document.createElement("div")
     div.classList = `Coisas-no-carrinho`
@@ -121,7 +134,7 @@ function removeCardList(list) {
 
     // let input = document.createElement("input")
     // input.innerHTML = `number`
-    let buttonAdd = document.createElement("button")
+    let buttonAddr = document.createElement("button")
 
     //     <div class="cart--item--qtarea">
     //     <button class="cart--item-qtmenos">-</button>
@@ -153,14 +166,14 @@ function removeCardList(list) {
     imgImg.classList = `imagemnoCarrinho`
     h2Name.innerHTML = list.nameItem
     h4Valor.innerHTML = ` R$${list.value}`
-    buttonAdd.id = `newbutton`
-    buttonAdd.classList.add(`productButton`)
-    buttonAdd.innerHTML = `Remover do carrinho`
+    buttonAddr.id = `newbutton`
+    buttonAddr.classList.add(`productButton`)
+    buttonAddr.innerHTML = `Remover do carrinho`
 
     sectionCard.appendChild(ul)
     ul.appendChild(li)
-    li.append(imgImg, h2Name, buttonAdd, div)
-    div.append(h2Name, divQnt, buttonAdd)
+    li.append(imgImg, h2Name, buttonAddr, div)
+    div.append(h2Name, divQnt, buttonAddr)
 
     let contagemDentro = 1;
 
@@ -219,7 +232,7 @@ function removeCardList(list) {
 
     })
 
-    buttonAdd.addEventListener("click", function (e) {
+    buttonAddr.addEventListener("click", function (e) {
 
         contagemItens -= contagemDentro
         quantidade.innerHTML = `${contagemItens}`
@@ -239,15 +252,15 @@ function removeCardList(list) {
         document.querySelector("#moneyId").innerHTML = `R$ ${soma.toFixed(2)}`
         let listP = e.composedPath()
         listP[2].remove()
-        
+
         if (contagemItens === 0) {
             document.querySelector(".cart-empty").style.display = "flex"
-            document.querySelector(".cart-products").style.background= "none"
+            document.querySelector(".cart-products").style.background = "none"
         }
 
     })
 
-    
+
 
     return li
 }
@@ -351,6 +364,7 @@ function searchProducts(serarchTerm) {
 let arr = []
 
 function search() {
+
     let fomateString = ""
     let meuInput = document.querySelector(".search-input")
 
@@ -364,12 +378,13 @@ function search() {
 
         let formatedString = searchTerm.toString().toLowerCase()
         // console.log(formatedString)
-        
+
         const searchedProducts = searchProducts(formatedString)
         // console.log(searchedProducts)
 
         arr = []
         for (let i = 0; i < produtos.length; i++) {
+
             // let verification = verificacaoBarraDePesquisa(produtos[i].id)
             // console.log(verification)
 
@@ -386,9 +401,11 @@ function search() {
                 // arr.pop()
 
                 arr.push(produtos[i]);
+                console.log(arr[i])
+                // console.log(arr)
                 ul.innerHTML = ""
                 renderProducts(arr)
-            }else{
+            } else {
                 // alert("n achamos")
                 // alert.remove()
                 // confirm("confirme")
@@ -403,10 +420,6 @@ function search() {
 
         }
 
-
-
-
-
         // for (let i = 0; i < produtos.length; i++) {
         //     fomateString = produtos[i].nameItem.toString().toLowerCase();
 
@@ -417,6 +430,15 @@ function search() {
         //     }
         // }
     })
+
+    // let buttonAddc = document.querySelectorAll(".ProductButton")
+    // console.log(buttonAddc)
+    
+    // buttonAddc.addEventListener("click",function(){
+    //     console.log("clicoo")
+    // })
+
+
 }
 search()
 
@@ -436,10 +458,15 @@ search()
 
 // })
 
-function headerFilter(arr, tag) {
+function headerFilter(arr) {
     let lista = []
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].tag[0] == tag) {
+        if (arr[i].tag == `Kimono`) {
+            
+            // console.log(arr[i].tag[0])
+            // console.log(arr[i].tag)
+
+
             lista.push(arr[i])
             ul.innerHTML = ""
 
@@ -449,11 +476,13 @@ function headerFilter(arr, tag) {
     renderProducts(lista)
 }
 
+// headerFilter(produtos, "Kimono")
+
+
 function headerFilter2(arr) {
     let lista = []
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].tag != `Kimono`) {
-            console.log(arr[i].tag)
             lista.push(arr[i])
             ul.innerHTML = ""
 
@@ -477,6 +506,9 @@ function headerFilter3(arr) {
 }
 // headerFilter3(produtos)
 
+document.querySelector('#Kimono').addEventListener('click', function (e) {
+    headerFilter(produtos)
+})
 document.querySelector('#luva').addEventListener('click', function (e) {
     // let listP = e.composedPath()
     // console.log(listP)
@@ -487,10 +519,7 @@ document.querySelector('#luva').addEventListener('click', function (e) {
 
     headerFilter2(produtos)
 })
-document.querySelector('#Kimono').addEventListener('click', function (e) {
-    headerFilter(produtos, "Kimono")
-})
 document.querySelector('#all').addEventListener('click', function (e) {
-    
+
     headerFilter3(produtos)
 })

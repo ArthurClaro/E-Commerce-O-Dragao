@@ -21,8 +21,12 @@
 
 
   <header>
-    <img src="esquerda.png" alt="" id="imgEsquerda" onclick="location.reload()">
-    <img src="Captura de tela 2023-03-20 121329.png" alt="" id="capa">
+    <img src="esquerda-removebg-preview.png" alt="" id="imgEsquerda" onclick="location.reload()">
+    <h3>" <span class="multiple"></span> "</h3>
+
+    <img src="sem bg capa2.png" alt="" id="capa">
+    <img src="embaixo da capa.png" alt="" id="baixocapa">
+
 
     <ul class="sobre">
       <li>  <i class='bx bx-devices' ></i> Em Breve</li>
@@ -74,7 +78,7 @@
 
           <div class="main-search">
             <input class="search-input" type="text" placeholder="  Digite aqui sua pesquisa..." />
-            <button class="search-button">Pesquisar</button>
+            <button class="search-button" role="button">Pesquisar</button>
           </div>
           <aside>
             <div class="cart-title">
@@ -189,15 +193,10 @@ Meu<a href="https://www.linkedin.com/in/arthur-claro-8113b41a6/">Linkedin</a>
     <p>© 2023 Arthur Claro | Frontend Developer</p>
   </footer>
 </body>
+<!-- <script src="finisher-header.es5.min.js" type="text/javascript"></script> -->
 
+<script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
 </html>
-
-
-
-
-
-
-
 
 
 
@@ -262,6 +261,11 @@ header {
     justify-content: space-between;
     box-shadow: 0px 0px 0px 0px rgb(9, 9, 9);
     padding-bottom: 0px;
+
+        /* background: linear-gradient(-45deg, #000000, #9c00f6, #000000, #9c00f6, #000000); */
+        background: linear-gradient(-45deg, #9c00f6, #ffffff, #9c00f6, #ffffff, #9c00f6);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
 }
 
 
@@ -273,6 +277,15 @@ header li a {
     opacity: 0;
     animation: descendo 1s ease forwards;
     animation-delay: 0.5s;
+}
+
+header h3 {
+    /* color: aqua; */
+    position: relative;
+    right: 280px;
+    font-size: 20px;
+    padding: 10px 0px 0px 0px;
+
 }
 
 @keyframes descendo {
@@ -299,14 +312,38 @@ header li a {
 }
 
 #capa {
-    max-height: 100px;
+    /* max-height: 100px; */
+    height: 80px;
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-left: 240px;
+position: absolute;
+right: 715px;
+/* background-color: #27f503; */
+
 
     opacity: 0;
     animation: dentroPfora 1s ease forwards;
     animation-delay: 1s;
+}
+#baixocapa{
+    position: absolute;
+    top: 80px;
+    right: 640px;
+    height: 30px;
+
+border-top: none;
+
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background: linear-gradient(-45deg, #9c00f6, #ffffff, #9c00f6, #ffffff, #9c00f6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+  
 }
 
 @keyframes dentroPfora {
@@ -786,7 +823,7 @@ aside {
     font-size: 14px;
 }
 
-.search-button {
+/* .search-button {
     height: 40%;
     min-height: 40px;
     max-height: 500px;
@@ -794,13 +831,62 @@ aside {
     width: 30%;
     border: none;
     background: rgb(1, 1, 1);
-    /* background: linear-gradient(248deg, rgba(1, 1, 1, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%); */
+
     background: linear-gradient(248deg, rgba(1, 1, 1, 1) 0%, #9c00f6 50%, rgba(0, 0, 0, 1) 100%);
     color: #ffffff;
     margin-top: 10px;
     cursor: pointer;
 
-}
+} */
+
+.search-button {
+    height: 40%;
+    min-height: 40px;
+    max-height: 500px;
+    width: 70%;
+    width: 30%;
+    margin-top: 10px;
+
+    /* margin: 10px; */
+    /* padding: 15px 30px; */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0, 0, 0);
+    /* border-radius: 10px; */
+    /* border-start-start-radius: 10px; */
+  border-end-end-radius: 10px;
+  
+      border-start-end-radius: 10px;
+  
+    display: block;
+    border: 0px;
+    font-weight: 600;
+    /* box-shadow: 0px 0px 14px -7px #f09819; */
+    background-image: linear-gradient(45deg, #fcfcfc 0%, #8419f0  51%, #000000  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .search-button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-button:active {
+    transform: scale(0.95);
+  }
+
+
+
+
+
+  /* ///////////////////////////////////////////// */
 
 .cart-title {
     /* background-color: rgb(223, 8, 8); */
@@ -1370,10 +1456,13 @@ footer .wave#wave4 {
 
 
 
-
-
-
-
+var typed = new Typed(".multiple",{
+    strings:["Bem-vindo","Lute, Acredite, Conquiste, Perca, Deseje."],
+    typeSpeed:100,
+    backSpeed:100,
+    backDelay:1000,
+    loop:true
+})
 
 
 let quantidade = document.querySelector("#quantidadeId")
@@ -1396,7 +1485,7 @@ function renderProducts(list) {
         let h2Name = document.createElement("h2")
         let pDescripition = document.createElement("p")
         let h4Valor = document.createElement("h4")
-        let buttonAdd = document.createElement("button")
+        let buttonAddc = document.createElement("button")
         let p2Tag = document.createElement("p")
 
         li.id = `${list[i].id}`
@@ -1409,9 +1498,9 @@ function renderProducts(list) {
         pDescripition.innerHTML = list[i].description
         h4Valor.innerHTML = `R$${list[i].value}`
 
-        buttonAdd.innerHTML = `Adicionar ao Carrinho`
-        buttonAdd.classList.add(`ProductButton`)
-        buttonAdd.id = `${list[i].id}`
+        buttonAddc.innerHTML = `Adicionar ao Carrinho`
+        buttonAddc.classList.add(`ProductButton`)
+        buttonAddc.id = `${list[i].id}`
 
         p2Tag.innerHTML = list[i].tag
         p2Tag.classList = `tag`
@@ -1425,9 +1514,9 @@ function renderProducts(list) {
         li.appendChild(h2Name)
         li.appendChild(pDescripition)
         li.appendChild(h4Valor)
-        li.appendChild(buttonAdd)
+        li.appendChild(buttonAddc)
 
-        buttonAdd.addEventListener(`click`, function (e) {
+        buttonAddc.addEventListener(`click`, function (e) {
             let idElemnto = e.target.id
             // console.log(idElemnto)
             // "1"
@@ -1455,14 +1544,15 @@ function renderProducts(list) {
                 // let product = searchProducts(id)
 
                 let elementCart = removeCardList(product)
+                // console.log(elementCart)
 
                 document.querySelector(".cart-empty").style.display = "none"
                 document.querySelector('.cart-list').appendChild(elementCart)
 
-                document.querySelector(".cart-products").style.background= "url(areaDaloja.png)"
+                document.querySelector(".cart-products").style.background = "url(areaDaloja.png)"
                 // document.querySelector(".cart-products").style.background= "none"
 
-            }else{
+            } else {
                 alert("Item já Add.");
 
             }
@@ -1490,6 +1580,9 @@ function procuraItem(id) {
 
 function removeCardList(list) {
 
+
+
+
     let li = document.createElement("li")
     let div = document.createElement("div")
     div.classList = `Coisas-no-carrinho`
@@ -1499,7 +1592,7 @@ function removeCardList(list) {
 
     // let input = document.createElement("input")
     // input.innerHTML = `number`
-    let buttonAdd = document.createElement("button")
+    let buttonAddr = document.createElement("button")
 
     //     <div class="cart--item--qtarea">
     //     <button class="cart--item-qtmenos">-</button>
@@ -1531,14 +1624,14 @@ function removeCardList(list) {
     imgImg.classList = `imagemnoCarrinho`
     h2Name.innerHTML = list.nameItem
     h4Valor.innerHTML = ` R$${list.value}`
-    buttonAdd.id = `newbutton`
-    buttonAdd.classList.add(`productButton`)
-    buttonAdd.innerHTML = `Remover do carrinho`
+    buttonAddr.id = `newbutton`
+    buttonAddr.classList.add(`productButton`)
+    buttonAddr.innerHTML = `Remover do carrinho`
 
     sectionCard.appendChild(ul)
     ul.appendChild(li)
-    li.append(imgImg, h2Name, buttonAdd, div)
-    div.append(h2Name, divQnt, buttonAdd)
+    li.append(imgImg, h2Name, buttonAddr, div)
+    div.append(h2Name, divQnt, buttonAddr)
 
     let contagemDentro = 1;
 
@@ -1597,7 +1690,7 @@ function removeCardList(list) {
 
     })
 
-    buttonAdd.addEventListener("click", function (e) {
+    buttonAddr.addEventListener("click", function (e) {
 
         contagemItens -= contagemDentro
         quantidade.innerHTML = `${contagemItens}`
@@ -1617,15 +1710,15 @@ function removeCardList(list) {
         document.querySelector("#moneyId").innerHTML = `R$ ${soma.toFixed(2)}`
         let listP = e.composedPath()
         listP[2].remove()
-        
+
         if (contagemItens === 0) {
             document.querySelector(".cart-empty").style.display = "flex"
-            document.querySelector(".cart-products").style.background= "none"
+            document.querySelector(".cart-products").style.background = "none"
         }
 
     })
 
-    
+
 
     return li
 }
@@ -1729,6 +1822,7 @@ function searchProducts(serarchTerm) {
 let arr = []
 
 function search() {
+
     let fomateString = ""
     let meuInput = document.querySelector(".search-input")
 
@@ -1742,12 +1836,13 @@ function search() {
 
         let formatedString = searchTerm.toString().toLowerCase()
         // console.log(formatedString)
-        
+
         const searchedProducts = searchProducts(formatedString)
         // console.log(searchedProducts)
 
         arr = []
         for (let i = 0; i < produtos.length; i++) {
+
             // let verification = verificacaoBarraDePesquisa(produtos[i].id)
             // console.log(verification)
 
@@ -1764,9 +1859,11 @@ function search() {
                 // arr.pop()
 
                 arr.push(produtos[i]);
+                console.log(arr[i])
+                // console.log(arr)
                 ul.innerHTML = ""
                 renderProducts(arr)
-            }else{
+            } else {
                 // alert("n achamos")
                 // alert.remove()
                 // confirm("confirme")
@@ -1781,10 +1878,6 @@ function search() {
 
         }
 
-
-
-
-
         // for (let i = 0; i < produtos.length; i++) {
         //     fomateString = produtos[i].nameItem.toString().toLowerCase();
 
@@ -1795,6 +1888,15 @@ function search() {
         //     }
         // }
     })
+
+    // let buttonAddc = document.querySelectorAll(".ProductButton")
+    // console.log(buttonAddc)
+    
+    // buttonAddc.addEventListener("click",function(){
+    //     console.log("clicoo")
+    // })
+
+
 }
 search()
 
@@ -1814,10 +1916,15 @@ search()
 
 // })
 
-function headerFilter(arr, tag) {
+function headerFilter(arr) {
     let lista = []
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].tag[0] == tag) {
+        if (arr[i].tag == `Kimono`) {
+            
+            // console.log(arr[i].tag[0])
+            // console.log(arr[i].tag)
+
+
             lista.push(arr[i])
             ul.innerHTML = ""
 
@@ -1827,11 +1934,13 @@ function headerFilter(arr, tag) {
     renderProducts(lista)
 }
 
+// headerFilter(produtos, "Kimono")
+
+
 function headerFilter2(arr) {
     let lista = []
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].tag != `Kimono`) {
-            console.log(arr[i].tag)
             lista.push(arr[i])
             ul.innerHTML = ""
 
@@ -1855,6 +1964,9 @@ function headerFilter3(arr) {
 }
 // headerFilter3(produtos)
 
+document.querySelector('#Kimono').addEventListener('click', function (e) {
+    headerFilter(produtos)
+})
 document.querySelector('#luva').addEventListener('click', function (e) {
     // let listP = e.composedPath()
     // console.log(listP)
@@ -1865,10 +1977,7 @@ document.querySelector('#luva').addEventListener('click', function (e) {
 
     headerFilter2(produtos)
 })
-document.querySelector('#Kimono').addEventListener('click', function (e) {
-    headerFilter(produtos, "Kimono")
-})
 document.querySelector('#all').addEventListener('click', function (e) {
-    
+
     headerFilter3(produtos)
 })

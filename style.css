@@ -49,6 +49,11 @@ header {
     justify-content: space-between;
     box-shadow: 0px 0px 0px 0px rgb(9, 9, 9);
     padding-bottom: 0px;
+
+        /* background: linear-gradient(-45deg, #000000, #9c00f6, #000000, #9c00f6, #000000); */
+        background: linear-gradient(-45deg, #9c00f6, #ffffff, #9c00f6, #ffffff, #9c00f6);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
 }
 
 
@@ -60,6 +65,15 @@ header li a {
     opacity: 0;
     animation: descendo 1s ease forwards;
     animation-delay: 0.5s;
+}
+
+header h3 {
+    /* color: aqua; */
+    position: relative;
+    right: 280px;
+    font-size: 20px;
+    padding: 10px 0px 0px 0px;
+
 }
 
 @keyframes descendo {
@@ -86,14 +100,38 @@ header li a {
 }
 
 #capa {
-    max-height: 100px;
+    /* max-height: 100px; */
+    height: 80px;
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-left: 240px;
+position: absolute;
+right: 715px;
+/* background-color: #27f503; */
+
 
     opacity: 0;
     animation: dentroPfora 1s ease forwards;
     animation-delay: 1s;
+}
+#baixocapa{
+    position: absolute;
+    top: 80px;
+    right: 640px;
+    height: 30px;
+
+border-top: none;
+
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background: linear-gradient(-45deg, #9c00f6, #ffffff, #9c00f6, #ffffff, #9c00f6);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+  
 }
 
 @keyframes dentroPfora {
@@ -573,7 +611,7 @@ aside {
     font-size: 14px;
 }
 
-.search-button {
+/* .search-button {
     height: 40%;
     min-height: 40px;
     max-height: 500px;
@@ -581,13 +619,62 @@ aside {
     width: 30%;
     border: none;
     background: rgb(1, 1, 1);
-    /* background: linear-gradient(248deg, rgba(1, 1, 1, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 100%); */
+
     background: linear-gradient(248deg, rgba(1, 1, 1, 1) 0%, #9c00f6 50%, rgba(0, 0, 0, 1) 100%);
     color: #ffffff;
     margin-top: 10px;
     cursor: pointer;
 
-}
+} */
+
+.search-button {
+    height: 40%;
+    min-height: 40px;
+    max-height: 500px;
+    width: 70%;
+    width: 30%;
+    margin-top: 10px;
+
+    /* margin: 10px; */
+    /* padding: 15px 30px; */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(0, 0, 0);
+    /* border-radius: 10px; */
+    /* border-start-start-radius: 10px; */
+  border-end-end-radius: 10px;
+  
+      border-start-end-radius: 10px;
+  
+    display: block;
+    border: 0px;
+    font-weight: 600;
+    /* box-shadow: 0px 0px 14px -7px #f09819; */
+    background-image: linear-gradient(45deg, #fcfcfc 0%, #8419f0  51%, #000000  100%);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .search-button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-button:active {
+    transform: scale(0.95);
+  }
+
+
+
+
+
+  /* ///////////////////////////////////////////// */
 
 .cart-title {
     /* background-color: rgb(223, 8, 8); */
