@@ -1,9 +1,9 @@
-var typed = new Typed(".multiple",{
-    strings:["Bem-vindo","Lute, Acredite, Conquiste, Perca, Deseje."],
-    typeSpeed:100,
-    backSpeed:100,
-    backDelay:1000,
-    loop:true
+var typed = new Typed(".multiple", {
+    strings: ["Bem-vindo", "Lute, Acredite, Conquiste, Perca, Deseje."],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
 })
 
 
@@ -71,18 +71,18 @@ function renderProducts(list) {
 
             // se tirar o if ele add mais de uma vez o mesmo produto
             if (verification == false) {
+                let product = procuraItem(id)
 
-                produtos[i].quantidade += 1
-
+                product.quantidade += 1
 
                 contagemItens++
                 quantidade.innerHTML = `${contagemItens}`
 
-                soma += produtos[i].value
+                soma += product.value
+                
                 document.querySelector("#moneyId").innerHTML = `R$ ${soma.toFixed(2)}`
 
-                let product = procuraItem(id)
-                // console.log(product)
+                // console.log(product.value)
                 // let product = searchProducts(id)
 
                 let elementCart = removeCardList(product)
@@ -396,12 +396,13 @@ function search() {
             // console.log(verification)
 
             fomateString = produtos[i].nameItem.toString().toLowerCase();
+            // console.log(fomateString)
             if (fomateString.includes(formatedString)) {
                 // arr.splice(i, 1)
                 // arr.pop()
-
+                // console.log(produtos[i])
                 arr.push(produtos[i]);
-                console.log(arr[i])
+                // console.log(arr[i])
                 // console.log(arr)
                 ul.innerHTML = ""
                 renderProducts(arr)
@@ -433,7 +434,7 @@ function search() {
 
     // let buttonAddc = document.querySelectorAll(".ProductButton")
     // console.log(buttonAddc)
-    
+
     // buttonAddc.addEventListener("click",function(){
     //     console.log("clicoo")
     // })
@@ -462,7 +463,7 @@ function headerFilter(arr) {
     let lista = []
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].tag == `Kimono`) {
-            
+
             // console.log(arr[i].tag[0])
             // console.log(arr[i].tag)
 
